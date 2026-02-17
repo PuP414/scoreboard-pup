@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Sports Scoreboard</h1>
+        
+        <div class="sport-selector">
+            <button onclick="setSport('football')">ฟุตบอล</button>
+            <button onclick="setSport('volleyball')">วอลเลย์บอล</button>
+        </div>
+
+        <h2 id="sport-title">ฟุตบอล</h2>
+
+        <div class="scoreboard">
+            <div class="team team-home">
+                <input type="text" value="TEAM A" class="team-name">
+                <div id="score-home" class="score">0</div>
+                <div class="controls">
+                    <button class="btn plus" onclick="updateScore('home', 1)">+</button>
+                    <button class="btn minus" onclick="updateScore('home', -1)">-</button>
+                </div>
+                <div class="sets" id="sets-home-container" style="display:none;">
+                    <span>Sets: </span><span id="sets-home">0</span>
+                    <button onclick="updateSet('home', 1)">🏆</button>
+                </div>
+            </div>
+
+            <div class="divider">VS</div>
+
+            <div class="team team-away">
+                <input type="text" value="TEAM B" class="team-name">
+                <div id="score-away" class="score">0</div>
+                <div class="controls">
+                    <button class="btn plus" onclick="updateScore('away', 1)">+</button>
+                    <button class="btn minus" onclick="updateScore('away', -1)">-</button>
+                </div>
+                <div class="sets" id="sets-away-container" style="display:none;">
+                    <span>Sets: </span><span id="sets-away">0</span>
+                    <button onclick="updateSet('away', 1)">🏆</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="reset-btn" onclick="resetBoard()">ล้างคะแนนใหม่</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
